@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Desafio Notas del curso</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div><h1>Notas de los Alumnos</h1></div>
+        <script>
+            var info = ["Nombre","Apellido","Nota 1","Nota 2","Nota 3","Nota 4","Nota 5"];
+            var datosAlumnos = new Array();
+            //Obtener los datos de los alumnos
+            var alumnos1=new Array();
+            var completarDatos1 = function(infoAlumnos1){
+            for(var cont1=0;cont1 < infoAlumnos1;cont1++) {
+                if (cont1<2){
+                   var datos = prompt("Ingresa la informacion del primer Alumno\n"+info[cont1]);
+                   alumnos1.push(datos); 
+                }else{
+                    var datos = parseFloat(prompt("Ingresa la informacion del primer Alumno\n"+info[cont1]));
+                    alumnos1.push(datos); 
+                }}};
+            var alumnos2=new Array();
+            var completarDatos2 = function(infoAlumnos2){
+            for(var cont2=0;cont2 < infoAlumnos2;cont2++) {
+                if (cont2<2){
+                   var datos = prompt("Ingresa la informacion del segundo Alumno\n"+info[cont2]);
+                   alumnos2.push(datos); 
+                }else{
+                    var datos = parseFloat(prompt("Ingresa la informacion del segundo Alumno\n"+info[cont2]));
+                    alumnos2.push(datos); 
+                }}};
+            var alumnos3=new Array();
+            var completarDatos3 = function(infoAlumnos3){
+            for(var cont3=0;cont3 < infoAlumnos3;cont3++) {
+                if (cont3<2){
+                   var datos = prompt("Ingresa la informacion del tercer Alumno\n"+info[cont3]);
+                   alumnos3.push(datos); 
+                }else{
+                    var datos = parseFloat(prompt("Ingresa la informacion del tercer Alumno\n"+info[cont3]));
+                    alumnos3.push(datos); 
+                }}};
+            var alumnos4=new Array();
+            var completarDatos4 = function(infoAlumnos4){
+            for(var cont4=0;cont4 < infoAlumnos4;cont4++) {
+                if (cont4<2){
+                   var datos = prompt("Ingresa la informacion del cuarto Alumno\n"+info[cont4]);
+                   alumnos4.push(datos); 
+                }else{
+                    var datos = parseFloat(prompt("Ingresa la informacion del cuarto Alumno\n"+info[cont4]));
+                    alumnos4.push(datos); 
+                }}};
+            var alumnos5=new Array();
+            var completarDatos5 = function(infoAlumnos5){
+            for(var cont5=0;cont5 < infoAlumnos5;cont5++) {
+                if (cont5<2){
+                   var datos = prompt("Ingresa la informacion del quinto Alumno\n"+info[cont5]);
+                   alumnos5.push(datos); 
+                }else{
+                    var datos = parseFloat(prompt("Ingresa la informacion del quinto Alumno\n"+info[cont5]));
+                    alumnos5.push(datos); 
+                }}};
+            completarDatos1(info.length); completarDatos2(info.length);
+            completarDatos3(info.length); completarDatos4(info.length);
+            completarDatos5(info.length);
+            datosAlumnos[0] = alumnos1; datosAlumnos[1] = alumnos2;
+            datosAlumnos[2] = alumnos3; datosAlumnos[3] = alumnos4;
+            datosAlumnos[4] = alumnos5;
+            //Calcular promedio de cada alumnos
+            for(var i=0;i<5;i++){
+                var suma = datosAlumnos[i][2]+datosAlumnos[i][3]+datosAlumnos[i][4]+datosAlumnos[i][5]+datosAlumnos[i][6];
+                var promedio = suma/5;
+                datosAlumnos[i][7] = parseFloat(promedio);
+                suma=0 ;promedio=0;
+            }
+            //Buscar el mejor promedio
+            var pmayor =0;
+            var pposi =0;
+            for (var z=0;z<5;z++){
+                if (datosAlumnos[z][7] > pmayor){
+                    pmayor=datosAlumnos[z][7];
+                    pposi=z;
+                }
+            }
+            //Calcular el promedio del curso
+            var suma1 = datosAlumnos[0][7]+datosAlumnos[1][7]+datosAlumnos[2][7]+datosAlumnos[3][7]+datosAlumnos[4][7];
+            var promCurso = suma1/5;
+            //Mostrar datos alumnos
+            for(var c=0;c < datosAlumnos.length;c++){
+            document.write("Nombre = "+datosAlumnos[c][0]+" "+datosAlumnos[c][1]+"<p>");
+            document.write("Nota 1 = "+datosAlumnos[c][2]+" / ");
+            document.write("Nota 2 = "+datosAlumnos[c][3]+" / ");
+            document.write("Nota 3 = "+datosAlumnos[c][4]+" / ");
+            document.write("Nota 4 = "+datosAlumnos[c][5]+" / ");
+            document.write("Nota 5 = "+datosAlumnos[c][6]+" / ");
+            document.write("Promedio = "+datosAlumnos[c][7]+"<p>");
+            }
+            document.write("Promedio del curso : "+promCurso+"<p>");
+            document.write("Mejor Promedio del curso : "+pmayor+"<p>");
+            document.write("El mejor promedio es de "+datosAlumnos[pposi][0]+" "+datosAlumnos[pposi][1]+"<p>");
+            </script>
+        
+    </body>
+</html>
